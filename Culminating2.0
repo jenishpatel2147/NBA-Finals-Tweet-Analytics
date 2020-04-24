@@ -1,0 +1,40 @@
+import tweepy
+
+# Twitter Keys and Tokens
+
+tweet_goingout = input("Please Enter something")
+ConsKey = "2i0a8rYG1b5pGWDEbXKgh8gsF"
+ConsSec = "zW3qC30mYq2F8etChXQYU4Kr5bdus7ftsAgCBQ3jHQnYpZUp14"
+AccTok = "3936941474-q2frOK04onmcTxry1UuL8sZPB3LSBKwisqxrpxE"
+AccTokSec = "PqllJJFSuNkzJpVSgPfa2jopRDXYbPeSkRVrn2g4KTTeh"
+
+# authentication of consumer key and secret
+authorize = tweepy.OAuthHandler(ConsKey, ConsSec)
+
+# authentication of access token and secret
+authorize.set_access_token(AccTok, AccTokSec)
+tweet = tweepy.API(authorize)
+
+# update the status
+tweet.update_status(status = tweet_goingout)
+
+def withmedia():
+    import tweepy
+
+# personal information
+    ConsKey = "2i0a8rYG1b5pGWDEbXKgh8gsF"
+    ConsSec = "zW3qC30mYq2F8etChXQYU4Kr5bdus7ftsAgCBQ3jHQnYpZUp14"
+    AccTok = "3936941474-q2frOK04onmcTxry1UuL8sZPB3LSBKwisqxrpxE"
+    AccTokSec = "PqllJJFSuNkzJpVSgPfa2jopRDXYbPeSkRVrn2g4KTTeh"
+
+# authentication
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+
+    api = tweepy.API(auth)
+    tweet ="Text part of the tweet" #
+    image_path ="path of the image"
+
+    # to attach the media file
+    status = api.update_with_media(image_path, tweet)
+    api.update_status(status = tweet)
